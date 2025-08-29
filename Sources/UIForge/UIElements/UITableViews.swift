@@ -6,20 +6,20 @@
 //
 import UIKit
 
-public class TableView: UITableView {
+open class TableView: UITableView {
     
     public init(style: UITableView.Style = .plain) {
         super.init(frame: .zero, style: style)
         self.backgroundColor = .clear
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
 }
 
-public class TableCell : UITableViewCell {
+open class TableCell : UITableViewCell {
     
     public let id: String
     
@@ -29,7 +29,7 @@ public class TableCell : UITableViewCell {
         self.backgroundColor = .clear
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

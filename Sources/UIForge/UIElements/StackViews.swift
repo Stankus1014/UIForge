@@ -18,10 +18,14 @@ extension UIStackView {
 public class VStack : UIStackView {
     
     public init() {
-        super.init()
+        super.init(frame: .zero)
         self.alignment = .leading
         self.distribution = .fill
         self.axis = .vertical
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
@@ -29,10 +33,14 @@ public class VStack : UIStackView {
 public class HStack : UIStackView {
     
     public init() {
-        super.init()
+        super.init(frame: .zero)
         self.alignment = .leading
         self.distribution = .fill
         self.axis = .horizontal
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
