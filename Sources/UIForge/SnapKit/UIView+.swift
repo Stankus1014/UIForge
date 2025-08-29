@@ -88,11 +88,29 @@ public extension UIView {
 
         return self
     }
+    
+    @discardableResult
+    func height(equalTo view: UIView) -> Self {
+        self.snp.makeConstraints { make in
+            make.height.equalTo(view)
+        }
+
+        return self
+    }
 
     @discardableResult
     func width(_ value: CGFloat) -> Self {
         self.snp.makeConstraints { make in
             make.width.equalTo(value)
+        }
+
+        return self
+    }
+    
+    @discardableResult
+    func width(equalTo view: UIView) -> Self {
+        self.snp.makeConstraints { make in
+            make.width.equalTo(view)
         }
 
         return self
