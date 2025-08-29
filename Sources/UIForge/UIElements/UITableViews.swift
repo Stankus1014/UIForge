@@ -8,7 +8,7 @@ import UIKit
 
 public class TableView: UITableView {
     
-    init(style: UITableView.Style = .plain) {
+    public init(style: UITableView.Style = .plain) {
         super.init(frame: .zero, style: style)
         self.backgroundColor = .clear
     }
