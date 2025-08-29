@@ -6,9 +6,9 @@
 //
 import UIKit
 
-public class Header : UILabel {
+public class Billboard : UILabel {
     
-    init(_ text: String, alignment: NSTextAlignment = .center, size: CGFloat = UIForgeTheme.shared.headerTheme.size) {
+    public init(_ text: String, alignment: NSTextAlignment = .center) {
         super.init(frame: .zero)
         self.text = text
         self.textColor = UIForgeTheme.shared.headerTheme.color
@@ -16,7 +16,23 @@ public class Header : UILabel {
         self.font = UIForgeTheme.shared.headerTheme.font
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+public class Header : UILabel {
+    
+    public init(_ text: String, alignment: NSTextAlignment = .left) {
+        super.init(frame: .zero)
+        self.text = text
+        self.textColor = UIForgeTheme.shared.headerTheme.color
+        self.textAlignment = alignment
+        self.font = UIForgeTheme.shared.headerTheme.font
+    }
+    
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -24,7 +40,7 @@ public class Header : UILabel {
 
 public class Subheader : UILabel {
     
-    init(_ text: String, alignment: NSTextAlignment = .center, size: CGFloat = UIForgeTheme.shared.subheaderTheme.size) {
+    public init(_ text: String, alignment: NSTextAlignment = .left) {
         super.init(frame: .zero)
         self.text = text
         self.textColor = UIForgeTheme.shared.subheaderTheme.color
@@ -32,7 +48,7 @@ public class Subheader : UILabel {
         self.font = UIForgeTheme.shared.subheaderTheme.font
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -40,7 +56,7 @@ public class Subheader : UILabel {
 
 public class Body : UILabel {
     
-    init(_ text: String, alignment: NSTextAlignment = .center, size: CGFloat = UIForgeTheme.shared.bodyTheme.size) {
+    public init(_ text: String, alignment: NSTextAlignment = .left) {
         super.init(frame: .zero)
         self.text = text
         self.textColor = UIForgeTheme.shared.bodyTheme.color
@@ -48,7 +64,7 @@ public class Body : UILabel {
         self.font = UIForgeTheme.shared.bodyTheme.font
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

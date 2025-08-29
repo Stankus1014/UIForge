@@ -11,16 +11,22 @@ public class UIForgeTheme {
     
     @MainActor public static let shared = UIForgeTheme()
     
-    internal var headerTheme : LabelTheme
-    internal var subheaderTheme : LabelTheme
-    internal var bodyTheme : LabelTheme
+    var billboardTheme : LabelTheme
+    var headerTheme : LabelTheme
+    var subheaderTheme : LabelTheme
+    var bodyTheme : LabelTheme
     
-    internal var colorPalette: ColorPalette = ColorPalette()
+    public var colorPalette: ColorPalette = ColorPalette()
     
     private init() {
-        self.headerTheme = DefaultLabel(font: .boldSystemFont(ofSize: 22), size: 22, color: .lightGray)
-        self.subheaderTheme = DefaultLabel(font: .systemFont(ofSize: 16, weight: .medium), size: 16, color: .lightGray)
-        self.bodyTheme = DefaultLabel(font: .systemFont(ofSize: 12, weight: .light), size: 12, color: .darkGray)
+        self.billboardTheme = DefaultLabelTheme(font: .boldSystemFont(ofSize: 26), size: 26, color: .darkGray)
+        self.headerTheme = DefaultLabelTheme(font: .boldSystemFont(ofSize: 22), size: 22, color: .darkGray)
+        self.subheaderTheme = DefaultLabelTheme(font: .systemFont(ofSize: 16, weight: .medium), size: 16, color: .lightGray)
+        self.bodyTheme = DefaultLabelTheme(font: .systemFont(ofSize: 12, weight: .light), size: 12, color: .lightGray)
+    }
+    
+    public func setBillboardTheme(theme: LabelTheme) {
+        self.billboardTheme = theme
     }
     
     public func setHeaderTheme(theme: LabelTheme) {

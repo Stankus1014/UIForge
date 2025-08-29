@@ -12,12 +12,12 @@ public protocol LabelTheme {
     var color: UIColor { get set }
 }
 
-public struct DefaultLabel: LabelTheme {
+public struct DefaultLabelTheme: LabelTheme {
     public var font: UIFont
     public var size: CGFloat
     public var color: UIColor
 
-    public init(font: UIFont, size: CGFloat, color: UIColor) {
+    init(font: UIFont, size: CGFloat, color: UIColor) {
         self.font = font
         self.size = size
         self.color = color
