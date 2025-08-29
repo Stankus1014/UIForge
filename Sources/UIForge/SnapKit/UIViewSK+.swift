@@ -68,7 +68,7 @@ public extension UIView {
     }
     
     @discardableResult
-    func pinRight(_ view: UIView, spacing: CGFloat = 0) -> Self {
+    func pinRight(of view: UIView, spacing: CGFloat = 0) -> Self {
         guard let superview = self.superview else {
             return self
         }
@@ -81,13 +81,39 @@ public extension UIView {
     }
     
     @discardableResult
-    func pinLeft(_ view: UIView, spacing: CGFloat = 0) -> Self {
+    func pinLeft(of view: UIView, spacing: CGFloat = 0) -> Self {
         guard let superview = self.superview else {
             return self
         }
 
         self.snp.makeConstraints { make in
             make.right.equalTo(view.snp.left).offset(spacing)
+        }
+
+        return self
+    }
+    
+    @discardableResult
+    func touchLeft(spacing: CGFloat = 0) -> Self {
+        guard let superview = self.superview else {
+            return self
+        }
+
+        self.snp.makeConstraints { make in
+            make.left.equalTo(superview.snp.left).offset(spacing)
+        }
+
+        return self
+    }
+    
+    @discardableResult
+    func touchRight(spacing: CGFloat = 0) -> Self {
+        guard let superview = self.superview else {
+            return self
+        }
+
+        self.snp.makeConstraints { make in
+            make.right.equalTo(superview.snp.right).offset(spacing)
         }
 
         return self
