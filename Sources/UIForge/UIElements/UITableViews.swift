@@ -23,7 +23,7 @@ open class TableCell : UITableViewCell {
     
     public let id: String
     
-    init(id: String) {
+    public init(id: String) {
         self.id = id
         super.init(style: .default, reuseIdentifier: id)
         self.backgroundColor = .clear

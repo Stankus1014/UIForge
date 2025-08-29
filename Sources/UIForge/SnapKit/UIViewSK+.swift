@@ -16,6 +16,19 @@ public extension UIView {
     }
     
     @discardableResult
+    func touchTop() -> Self {
+        guard let superview = self.superview else {
+            return self
+        }
+
+        self.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+        }
+
+        return self
+    }
+    
+    @discardableResult
     func pinBelow(_ view: UIView, spacing: CGFloat = 0) -> Self {
         guard let superview = self.superview else {
             return self
@@ -36,6 +49,19 @@ public extension UIView {
 
         self.snp.makeConstraints { make in
             make.bottom.equalTo(view.snp.top).offset(spacing)
+        }
+
+        return self
+    }
+    
+    @discardableResult
+    func touchBottom() -> Self {
+        guard let superview = self.superview else {
+            return self
+        }
+
+        self.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
         }
 
         return self
