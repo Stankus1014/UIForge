@@ -100,7 +100,8 @@ public extension UIView {
         }
 
         self.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(inset)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
 
         return self
