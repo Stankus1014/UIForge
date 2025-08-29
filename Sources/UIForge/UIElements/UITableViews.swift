@@ -8,25 +8,22 @@ import UIKit
 
 open class TableView: UITableView {
     
-    public init(style: UITableView.Style = .plain) {
-        super.init(frame: .zero, style: style)
-        self.backgroundColor = .clear
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
     }
-    
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
 }
 
 open class TableCell : UITableViewCell {
     
-    public let id: String
-    
-    public init(id: String) {
-        self.id = id
-        super.init(style: .default, reuseIdentifier: id)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = .clear
+        self.selectionStyle = .none
     }
     
     required public init?(coder: NSCoder) {
